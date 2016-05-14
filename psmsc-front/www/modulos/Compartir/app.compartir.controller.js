@@ -26,7 +26,7 @@
         	pageTitle: 'Ingresa los datos del Producto'
         };
         vm.producto= {
-        	nombre: '',
+        	nombre: 'Producto1',
         	precio: '',
         	inicioOferta: '',
         	finOferta: '',
