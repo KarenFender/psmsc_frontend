@@ -1,0 +1,17 @@
+angular
+		.module('app',[
+			'ionic',
+			'ionic-datepicker',
+			'app.administrador',
+			'app.compartir',
+			'app.login',
+			'LocalStorageModule',
+			'restangular',
+			'ngFileUpload',
+			'app.usuario',
+			'app.sesion',
+			'ngRoute',
+			'angularMoment',
+			'ngCordova',
+			'app.busquedas'
+			]);

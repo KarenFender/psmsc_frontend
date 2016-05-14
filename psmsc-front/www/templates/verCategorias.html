@@ -1,0 +1,74 @@
+<ion-view>
+	<ion-nav-bar class="bar-light">
+        <ion-nav-back-button>Atrás</ion-nav-back-button>
+    </ion-nav-bar>
+	<ion-header-bar class="bar bar-header bar-positive">
+		<div class="header"><h1 class="title"><center>PSMSC</center></h1></div>
+	</ion-header-bar>
+	<ion-header-bar class="bar bar-subheader bar-light">
+		<h1 class="title"><center>ADMINISTRAR CATEGORIAS</center></h1>
+	</ion-header-bar>
+	<ion-content>
+
+		<ion-list>
+            <ion-item ng-show="vm.flag" style="margin-left: 30%">
+                <div class="row">
+                    <label class="item item-input">
+                        <input type="text" ng-model="vm.categoria.nombre"  placeholder="Edite la categoria" >
+                    </label>
+                    <button class="button button-balanced icon icon-right ion-edit" ng-click="vm.editar(vm.idCategoria)">
+                        Editar
+                    </button>
+                    <p  class="alert alert-success" ng-show="vm.settings.success">
+                        {{vm.settings.success}}
+                    </p>
+                </div>
+            </ion-item>
+
+            <!--Boton para agregar una nueva subcategoria-->
+
+            <ion-item ng-show="vm.flag2" style="margin-left: 30%">
+                <div class="row">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Agregar Subcategoria" ng-model = "vm.subcategoria.nombre" >
+                    </label>
+                    <button class="button button-positive icon icon-right ion-plus-round" ng-click="vm.agregarSubcat(vm.idCategoria)" ng-disabled="!vm.subcategoria.nombre">
+                        Agregar Subcategoria
+                    </button>
+                    <p  class="alert alert-success" ng-show="vm.subcat">
+                        {{vm.subcat}}
+                    </p>
+                </div>
+            </ion-item>
+
+            <ion-item class="item-remove-animate item-icon-right" ng-repeat="categoria in vm.categorias">
+                <div class="row">
+                
+                    <div class="col-25">                    
+                        <button class="button button-positive icon-left ion-arrow-down-b" style="height:60%;" ng-click="vm.mostrarSubcategoria(categoria.id)">
+                        </button>
+                    </div>
+
+                    <div class="col-50">                    
+                        <h2>{{categoria.nombre}}</h2>
+                    </div>
+                    <div class="col-75">                
+                        <button class="button button-balanced icon icon-right ion-edit"
+                                ng-click="vm.set({{categoria}})" style="height:60%;margin-top:2%;">
+                        </button>
+                      	<ion-option-button  style="margin-right: 3%;height:60%;margin-top:5%;" class="button-positive icon-left ion-plus-round" ng-click="vm.colocarsub(categoria.id)">
+                          Agregar Subcategoria
+                        </ion-option-button>
+
+                        <ion-option-button style="margin-right: 3%;height:60%;margin-top:5%;" class="button-assertive icon-left ion-trash-b" ng-click="vm.eliminar(categoria.id)">
+                          Eliminar
+                        </ion-option-button>
+                    </div>
+                </div>
+            </ion-item>
+    </ion-list>
+	</ion-content>
+    <div class="bar bar-footer bar-stable">
+        <a class="button button-positive icon-left ion-compose" ng-click="vm.agregarCat()">Agregar</a>
+    </div>
+</ion-view>

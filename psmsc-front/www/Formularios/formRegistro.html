@@ -1,0 +1,83 @@
+<div class="card">
+	<div class="list list-inset">
+		<div class="item item-image">
+		   	<img src="./img/registro.png">
+		</div>
+		<label class="item item-input">
+			<div class="row">		
+				<div class="col col-90"><input type="text" ng-model="vm.user.username" placeholder="Nombre de Usuario"></div>
+				<div class="col">*</div>
+			</div>
+	  	</label>
+		<label class="item item-input">
+			<div class="row">
+				<div class="col col-90"><input type="email" ng-model="vm.user.email" placeholder="Correo electrónico" ></div>
+				<div class="col">*</div>
+			</div>
+		</label>
+		<label class="item item-input">
+			<div class="row">
+				<div class="col col-90"><input type="password" placeholder="Contraseña" ng-model="vm.user.password" ></div>
+				<div class="col">*</div>
+			</div>
+		</label>
+		<label class="item item-input">
+			<div class="row">
+				<div class="col col-90"><input type="password" placeholder="Repetir Contraseña" ng-model="vm.user.password_confirmation" ></div>
+				<div class="col">*</div>
+			</div>
+		</label>
+
+		<div class="item item-input">
+				<div class="row">
+    				<div class="col" >
+		    				<button class="button button-calm button-block icon ion-android-calendar icon-left padding-left"
+		    						ng-click="vm.openDatepicker()"
+		    						style="font-size:18px">
+										<div class="text-center ng-binding" ng-if="!vm.user.FechaNac">
+											Fecha de Nacimiento
+										</div>
+										<div class="text-center ng-binding" ng-if="vm.user.FechaNac">
+											{{vm.user.FechaNac | amDateFormat:'DD/MMM/YYYY'}}
+										</div>
+				            </button>
+					</div>
+				</div>
+  		</div>
+
+		<label class="item item-input">		
+			<div class="row">
+				<div class="col col-30">
+					<ion-checkbox  ng-model="terminos">
+						Acepto
+					</ion-checkbox>
+				</div>
+				<div class="col col-90" style="text-align: left">
+					<button class="button button-clear button-positive" ui-sref="terminosCondiciones">
+						términos y condiciones
+					</button>
+				</div>
+			</div>
+		</label>
+	</div>
+	<div class="row">
+
+		<div class="col col-offset-25">
+			<button class="button button-balanced" ui-sref="inicio">
+				Inicio
+			</button>
+		</div>
+		<div class="col">
+			<button class="button button-positive"
+					ng-disabled="!vm.user.email || !vm.user.password ||
+								 !vm.user.username || !vm.user.password_confirmation ||
+								 !terminos	|| (vm.user.password != vm.user.password_confirmation)"
+					ng-click="vm.agregar(vm.user)" >
+				Registrar
+			</button>
+		</div>
+		<p ng-show="vm.settings.success" class="alert alert-success">
+			{{vm.settings.success}}
+		</p>
+	</div>
+</div>

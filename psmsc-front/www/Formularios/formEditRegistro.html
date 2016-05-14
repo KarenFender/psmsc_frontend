@@ -1,0 +1,62 @@
+<div class="card">
+	<div class="list list-inset">
+		<div class="item item-image">
+		   	<img src="./img/registro.png">
+		</div>
+		<label class="item item-input">
+			<div class="row">		
+				<div class="col col-90">
+					<input type="text" ng-model="vm.usuario.username" placeholder="Nombre de Usuario">
+				</div>
+			</div>
+	  	</label>
+		<label class="item item-input">
+			<div class="row">
+				<div class="col col-90">
+					<input type="email" ng-model="vm.usuario.email" placeholder="Correo electrónico">
+				</div>
+			</div>
+		</label>
+		<div class="item">
+			<button class="button button-positive icon ion-edit"
+					ng-click="vm.recuperaContrasena()">
+					Cambiar contraseña
+			</button>
+		</div>
+		<div class="item item-icon-left">
+			<div class="row">
+				<div class="col col-10">
+					<i class="icon ion-android-calendar" style="font-size:14px">
+					</i>
+					<button class="button button-positive" 
+							style="font-size:14px"
+							ng-click="vm.datepicker()">
+						<span ng-show='vm.usuario.fechaNac==null'>
+							Seleccione su fecha de nacimiento
+						</span>
+						<span ng-show='vm.usuario.fechaNac!=null'>
+							{{vm.usuario.fechaNac | amDateFormat:'DD/MMM/YYYY'}}
+						</span>
+						
+					</button>
+				</div>
+			</div>
+  		</div>
+		<label class="item item-input">
+			<div class="row">
+				<div class="col">
+					<button class="button button-balanced" ng-click="vm.verPublicaciones()">
+						Ver publicaciones
+					</button>
+				</div>
+				<div class="col col-offset-10">
+					<button class="button button-positive"
+							ng-disabled="!email || !password || !username || !Rpassword || !terminos	|| (password != Rpassword)"
+							ng-click="vm.submit()">
+						Realizar cambios
+					</button>
+				</div>
+			</div>
+		</label>
+	</div>
+</div>

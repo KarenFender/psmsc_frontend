@@ -1,0 +1,67 @@
+<ion-view>
+	<ion-content>
+		<div class="bienvenido-nombre">
+			<div class="list">
+				<div class="item item-icon-right"> 
+					<div class="item item-input">
+	  					<i class="icon ion-search placeholder-icon" ng-click="vm.buscar()"></i>
+	  					<input type="search" placeholder="Buscar Producto" ng-model="vm.busqueda.nombre">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="selec-categoria">
+			Seleccione una  categoria
+			<br>
+			<div class="card">
+		<div class="list list-inset">
+			<div class="list">
+		    	<div class="item item-avatar" >
+		    		<img src="img/registro.png">
+		      		<h2 style="font-size:20px">Busqueda</h2>
+		    	</div>
+			</div>
+
+			<div class="list card" ng-repeat="publicacion in vm.publicaciones">
+
+				<div class="item item-avatar">
+					<img src="img/avatar.jpg">
+					<span>
+						<h1>{{publicacion.nombre}}</h1>
+						<h2>Nombre Usuario que publica</h2>
+						<p>Publicación creada el: {{publicacion.created_at | amDateFormat:'DD/MMM/YYYY'}}</p>
+					</span>
+				</div>
+
+				<div class="item item-body">
+					<img class="full-image" src="img/coca.png">
+					<div class="item item-text-wrap">
+						<span>
+							<h2>Detalles de la publicación:</h2><br>
+							Precio: ${{publicacion.precio}}<br>
+							Detalles Oferta:<br>
+							Inicio: {{publicacion.inicioOferta | amDateFormat:'DD/MMM/YYYY'}}<br>
+							Fin: {{publicacion.finOferta | amDateFormat:'DD/MMM/YYYY'}}<br>
+							Detalles de Ubicación: {{publicacion.detallesUbicacion}}
+						</span>
+					</div>
+					<p>
+						<a href="#" class="subdued">1 Like</a>
+						<a href="#" class="subdued">5 Comments</a>
+					</p>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+			<br>
+			<center>
+			<a class="button button-calm" ui-sref="inicio"> Iniciar Sesion</a>
+			<br>
+			</center>
+			<a></a>
+		</div>
+	</ion-content>
+</ion-view>

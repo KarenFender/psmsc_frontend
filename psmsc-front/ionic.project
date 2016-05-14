@@ -1,0 +1,8 @@
+{
+  "name": "PSMSC",
+  "app_id": "",
+  "proxies": [{
+  	"path": "/PSMSC/public/users",
+  	"proxyUrl": "http://localhost/PSMSC/public/users"
+  }]
+}

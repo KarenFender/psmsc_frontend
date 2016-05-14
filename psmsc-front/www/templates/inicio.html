@@ -1,0 +1,37 @@
+<ion-view>
+  <!--ion-content ng-controller="InicioController"-->
+    <ion-header-bar class="bar bar-header bar-positive">
+            <div class="header">
+              <h1 class="title">PSMSC</h1>
+            </div>
+          </ion-header-bar>
+          <div class="bar bar-subheader bar-positive">
+            <h2 class="title">Plataforma Social Móvil de Servicios al Consumidor</h2>
+          </div>      
+
+          <ion-content class="content">
+            <div class="bienvenido">Bienvenido</div>
+            <div class="list">
+              <label class="item item-input">
+                <input type="email" placeholder="Correo electrónico"  ng-model="vm.credentials.email">
+              </label>
+              <label class="item item-input">
+                <input type="password" placeholder="Contraseña"  ng-model="vm.credentials.password">
+              </label> <br>
+              <button class="button button-calm button-large"  ng-click='vm.autenticar()' ng-disabled="!vm.credentials.email || !vm.credentials.password">Iniciar Sesión</button><br><br>
+              <button class="button button-balanced" ui-sref="bProducto">Buscar producto</button>
+            </div>
+            <div class="row">
+              <div class="col col-offset-25"><button class="button button-clear button-positive" ui-sref="registro">
+                Registrarse
+              </button></div>
+              <div class="col"><button class="button button-clear button-positive" ui-sref="oContrasena">
+                 Olvidé mi contraseña
+              </button></div>
+              <!--a class="button button-dark" href="/#/listaDeUsuarios">
+                 Lista de Usuarios
+              </a-->
+            </div>
+          <!--/ion-content-->
+  </ion-content>
+</ion-view>

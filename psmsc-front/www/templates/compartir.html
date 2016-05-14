@@ -1,0 +1,22 @@
+<ion-view>
+
+  <ion-header-bar class="bar bar-header bar-positive">
+    <div class="header">
+      <h1 class="title">PSMSC</h1>
+    </div>
+    <button class="button icon ion-android-arrow-back icon-left"
+            ng-click="vm.atras()"
+            style="font-size: 100%">
+      Atrás
+    </button>
+  </ion-header-bar>
+  <ion-content>
+
+    <form role="form"
+          name="form"
+          style="margin: 0 auto"
+          enctype="multipart/form-data"
+          ng-include="'Formularios/formS-Producto.html'">
+    </form>
+  </ion-content>
+</ion-view>

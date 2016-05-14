@@ -1,0 +1,77 @@
+<ion-view>
+	<ion-header-bar class="bar bar-header bar-positive">
+		<div class="header">
+			<h1 class="title">PSMSC</h1>
+		</div>
+	</ion-header-bar>
+
+	<ion-header-bar classs="bar bar-subheader bar-light item-icon-right">
+		<div class="title">
+			Publicaciones
+		</div>
+	</ion-header-bar>
+
+	<div class="bar bar-header bar-positive item-icon-right">
+		<div class="header">
+			<h1 class="title">PSMSC</h1>
+		</div>
+		<button class="button icon ion-log-out"
+				ng-click="vm.logout()"
+				style="font-size: 100%">
+			Salir
+		</button>
+	</div>
+
+	<div class="bar bar-subheader bar-light item-icon-right">
+		<h1 class="title">Publicaciones</h1>
+		<button class="button button-calm" ng-click="vm.compartir()">
+			<i class="ion-android-share-alt">
+				Publicar
+			</i>
+		</button>
+	</div>
+	<ion-content>
+	<div class="card">
+		<div class="list list-inset">
+			<div class="list">
+		    	<div class="item item-avatar" >
+		    		<img src="img/registro.png">
+		      		<h2 style="font-size:20px">Bienvenid@ {{vm.usuario.nombre}}</h2>
+		    	</div>
+			</div>
+
+			<div class="list card" ng-repeat="publicacion in vm.publicaciones">
+
+				<div class="item item-avatar">
+					<img src="img/avatar.jpg">
+					<span>
+						<h1>{{publicacion.nombre}}</h1>
+						<h2>Nombre Usuario que publica</h2>
+						<p>Publicación creada el: {{publicacion.created_at}}</p>
+					</span>
+				</div>
+
+				<div class="item item-body">
+					<img class="full-image" src="img/coca.png">
+					<div class="item item-text-wrap">
+						<span>
+							<h2>Detalles de la publicación:</h2><br>
+							Precio: ${{publicacion.precio}}<br>
+							Detalles Oferta:<br>
+							Inicio: {{publicacion.inicioOferta}}<br>
+							Fin: {{publicacion.finOferta}}<br>
+							Detalles de Ubicación: {{publicacion.detallesUbicacion}}
+						</span>
+					</div>
+					<p>
+						<a href="#" class="subdued">1 Like</a>
+						<a href="#" class="subdued">5 Comments</a>
+					</p>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</ion-content>
+</ion-view>

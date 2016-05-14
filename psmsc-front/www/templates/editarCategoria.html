@@ -1,0 +1,38 @@
+<ion-view>
+	<ion-header-bar class="bar bar-header bar-positive">
+      <div class="header">
+        <h1 class="title"><center>PSMSC</center></h1>
+      </div>
+    </ion-header-bar>
+    <ion-header-bar class="bar bar-subheader bar-light">
+    	<h1 class="title"><center>Editar Categoría</center></h1>
+    </ion-header-bar>
+
+    <ion-content>
+    	<div class="card">
+    		<div class="item">
+    			<center><button class="button button-balanced icon-left ion-home" ui-sref="addCategoria">Ver Categorías</button></center>
+    		</div>
+    		<div class="list list-inset">
+	    		<div class="item divider">
+	    			<label>Editar categoría: </label>
+	    		</div>
+	    		<label class="item item-input">
+	    			<input type="text" placeholder="Categoría" ng-model="vm.categoria.nombre">
+	    		</label>
+	    	</div>
+    		<div class="item">
+    			<center><button class="button button-positive" ng-click="vm.agregar(vm.categoria)">Aceptar</button></center>
+    		</div>
+            <div class="item" ng-show="vm.settings.success">
+                <div class="row">
+                    <div class="col">
+                        <p  class="alert alert-success">
+                            {{vm.settings.success}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+    	</div>
+	</ion-content>
+</ion-view>
